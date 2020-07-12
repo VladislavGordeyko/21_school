@@ -1,0 +1,48 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: letuffle <letuffle@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/06 20:50:07 by letuffle          #+#    #+#             */
+/*   Updated: 2020/07/12 16:38:30 by letuffle         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <fcntl.h>
+
+#include "get_next_line.h"
+
+int main()
+{
+    int fd;
+    char *line;
+    int i;
+
+    fd = open("test", O_RDONLY);
+
+    get_next_line(fd, &line);
+
+    // int res;
+    // static char *buf;
+    // size_t BUFFER_SIZE = 18;
+
+    // buf = (char*)malloc(sizeof(char) * (BUFFER_SIZE + 1));
+    // res = read(fd, buf, BUFFER_SIZE);
+
+    // printf("res - %d\n", res);
+    // printf("buf - %s\n", buf);
+
+
+
+    // i = 0;
+    // while (i = get_next_line(fd, &line))
+    // {
+    //     printf("i = %d %s\n", i, line);
+    //     free(line);
+    // }
+    // printf("i = %d %s\n", i, line);
+    //     free(line);
+    return (0);
+}
