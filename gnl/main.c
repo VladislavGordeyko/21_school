@@ -6,7 +6,7 @@
 /*   By: letuffle <letuffle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/06 20:50:07 by letuffle          #+#    #+#             */
-/*   Updated: 2020/07/12 16:38:30 by letuffle         ###   ########.fr       */
+/*   Updated: 2020/07/12 20:43:33 by letuffle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,31 @@ int main()
 
     fd = open("test", O_RDONLY);
 
-    get_next_line(fd, &line);
+    char buf[BUFF_SIZE + 1];
+    int res;
+
+    res = read(fd, buf, BUFF_SIZE);
+    printf("res - %d, buf - %s\n", res, buf);
+
+    res = read(fd, buf, BUFF_SIZE);
+    printf("res - %d, buf - %s\n", res, buf);
+
+    res = read(fd, buf, BUFF_SIZE);
+    printf("res - %d, buf - %s\n", res, buf);
+
+    res = read(fd, buf, BUFF_SIZE);
+    printf("res - %d, buf - %s\n", res, buf);
+
+    // get_next_line(fd, &line);
+    // printf("%s\n\n", line);
+
+    // get_next_line(fd, &line);
+    // printf("%s\n", line);
+
+    // get_next_line(fd, &line);
+    // printf("%s\n", line);
+
+    // get_next_line(fd, &line);
 
     // int res;
     // static char *buf;
@@ -37,7 +61,7 @@ int main()
 
 
     // i = 0;
-    // while (i = get_next_line(fd, &line))
+    // while (get_next_line(fd, &line))
     // {
     //     printf("i = %d %s\n", i, line);
     //     free(line);
