@@ -6,7 +6,7 @@
 /*   By: letuffle <letuffle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/06 20:33:16 by letuffle          #+#    #+#             */
-/*   Updated: 2020/07/14 21:24:30 by letuffle         ###   ########.fr       */
+/*   Updated: 2020/07/14 21:31:01 by letuffle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,8 @@ int get_next_line(int fd, char **line)
         *line = ft_strjoin(*line, buf);
         free(temp);
     }
-    return (0);
+    if (res == 0)
+        return (0);
+    else
+        return (1);
 }
