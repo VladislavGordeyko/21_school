@@ -6,7 +6,7 @@
 /*   By: letuffle <letuffle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/06 20:50:07 by letuffle          #+#    #+#             */
-/*   Updated: 2020/07/12 20:43:33 by letuffle         ###   ########.fr       */
+/*   Updated: 2020/07/14 21:23:03 by letuffle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,32 @@ int main()
     char buf[BUFF_SIZE + 1];
     int res;
 
-    res = read(fd, buf, BUFF_SIZE);
-    printf("res - %d, buf - %s\n", res, buf);
+    // res = read(fd, buf, BUFF_SIZE);
+    // printf("res - %d, buf - %s\n", res, buf);
 
-    res = read(fd, buf, BUFF_SIZE);
-    printf("res - %d, buf - %s\n", res, buf);
+    // res = read(fd, buf, BUFF_SIZE);
+    // printf("res - %d, buf - %s\n", res, buf);
 
-    res = read(fd, buf, BUFF_SIZE);
-    printf("res - %d, buf - %s\n", res, buf);
+    // res = read(fd, buf, BUFF_SIZE);
+    // printf("res - %d, buf - %s\n", res, buf);
 
-    res = read(fd, buf, BUFF_SIZE);
-    printf("res - %d, buf - %s\n", res, buf);
+    // res = read(fd, buf, BUFF_SIZE);
+    // printf("res - %d, buf - %s\n", res, buf);
 
-    // get_next_line(fd, &line);
-    // printf("%s\n\n", line);
+
+    for (int i = 0; i <= 19; i++)
+    {
+        get_next_line(fd, &line);
+        printf("%s\n\n", line);
+        free(line);
+    }
+
+    get_next_line(fd, &line);
+    printf("%s\n", line);
+    free(line);
+
+
+    // printf("%s\n", line);
 
     // get_next_line(fd, &line);
     // printf("%s\n", line);

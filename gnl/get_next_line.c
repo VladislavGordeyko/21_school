@@ -6,15 +6,38 @@
 /*   By: letuffle <letuffle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/06 20:33:16 by letuffle          #+#    #+#             */
-/*   Updated: 2020/07/12 20:41:38 by letuffle         ###   ########.fr       */
+/*   Updated: 2020/07/14 21:24:30 by letuffle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-// void    check_remainder(char *rem, char **line)
-// {
-// }
+void    *check_remainder(char **rem, char **line)
+{
+    char    *pntr;
+    char    *temp;
+
+    pntr = NULL;
+    if (*rem)
+    {  
+        if ((pntr = ft_strchr(*rem, '\n')))
+        {
+            *pntr = '\0';
+            *line = ft_strdup(*rem);
+            temp = *rem;
+            *rem = ft_strdup(++pntr);
+            free(temp);
+        }
+        else
+        {
+            *line = ft_strdup(*rem);
+            str_clr(*rem);
+        }
+    }
+    else
+        *line = "\0";
+    return (pntr);
+}
 
 int get_next_line(int fd, char **line)
 {
@@ -22,11 +45,11 @@ int get_next_line(int fd, char **line)
     char buf[BUFF_SIZE + 1];
     static char *rem;
     char    *nl_pntr;
+    char    *temp;
 
-    *line = "\0";
-    if (rem)
-        *line = ft_strjoin(*line, rem);
-    while ((res = read(fd, buf, BUFF_SIZE)))
+    // printf("iter # - %d | rem - |%s| \n", iter, rem);
+    nl_pntr = check_remainder(&rem, line);
+    while (!nl_pntr &&(res = read(fd, buf, BUFF_SIZE)))
     {
         buf[res] = '\0';
         if ((nl_pntr = ft_strchr(buf, '\n')))
@@ -34,9 +57,10 @@ int get_next_line(int fd, char **line)
             *nl_pntr = '\0';
             *line = ft_strjoin(*line, buf);
             rem = ft_strdup(++nl_pntr);
-            break ;
         }
+        temp = *line;
         *line = ft_strjoin(*line, buf);
+        free(temp);
     }
     return (0);
 }
