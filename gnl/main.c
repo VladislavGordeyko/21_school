@@ -6,7 +6,7 @@
 /*   By: letuffle <letuffle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/06 20:50:07 by letuffle          #+#    #+#             */
-/*   Updated: 2020/07/14 21:36:48 by letuffle         ###   ########.fr       */
+/*   Updated: 2020/07/15 21:16:57 by letuffle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main()
     char *line;
     int i;
 
-    fd = open("test", O_RDONLY);
+    fd = open("mix_marge2", O_RDONLY);
 
     // char buf[BUFF_SIZE + 1];
     // int res;
@@ -75,7 +75,7 @@ int main()
     i = 0;
     while (get_next_line(fd, &line))
     {
-        printf("i = %d %s\n", i, line);
+        printf("%s\n", line);
         free(line);
         i++;
     }

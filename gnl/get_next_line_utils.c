@@ -6,7 +6,7 @@
 /*   By: letuffle <letuffle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/12 16:29:47 by letuffle          #+#    #+#             */
-/*   Updated: 2020/07/14 20:47:41 by letuffle         ###   ########.fr       */
+/*   Updated: 2020/07/15 21:25:47 by letuffle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,28 @@ void	*ft_memset(void *s, int c, size_t n)
 	return (s);
 }
 
-void	str_clr(char *s)
+void	ft_strclr(char *s)
 {
-	ft_memset(s, 0, ft_strlen(s));
+	int	i;
+
+	i = 0;
+	while (s && *(s + i))
+	{
+		*(s + i) = '\0';
+		i++;
+	}
+}
+
+char	*ft_strnew(size_t size)
+{
+	char	*str;
+
+	if (!(str = (char *)malloc(sizeof(char) * size + 1)))
+		return (NULL);
+	str[size] = '\0';
+	while (size--)
+		str[size] = '\0';
+	return (str);
 }
 
 void	*ft_memcpy(void *dest, const char *src, unsigned int n)
