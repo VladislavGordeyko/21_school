@@ -6,13 +6,14 @@
 /*   By: letuffle <letuffle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/06 20:50:07 by letuffle          #+#    #+#             */
-/*   Updated: 2020/07/15 21:16:57 by letuffle         ###   ########.fr       */
+/*   Updated: 2020/07/16 21:35:18 by letuffle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fcntl.h>
 
 #include "get_next_line.h"
+#include <stdio.h>
 
 int main()
 {
@@ -70,15 +71,15 @@ int main()
     // printf("res - %d\n", res);
     // printf("buf - %s\n", buf);
 
+    //printf("%d\n", get_next_line(0, &line));
 
-
-    i = 0;
-    while (get_next_line(fd, &line))
+    /*i = 0;
+    while (get_next_line(0, &line))
     {
         printf("%s\n", line);
         free(line);
         i++;
-    }
+    }*/
     // printf("i = %d %s\n", i, line);
     //     free(line);
     return (0);

@@ -6,7 +6,7 @@
 /*   By: letuffle <letuffle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/12 16:29:47 by letuffle          #+#    #+#             */
-/*   Updated: 2020/07/15 21:25:47 by letuffle         ###   ########.fr       */
+/*   Updated: 2020/07/16 21:19:57 by letuffle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,76 +20,6 @@ size_t	ft_strlen(const char *str)
 	while (str[i])
 		i++;
 	return (i);
-}
-
-int has_next_line(char *s)
-{
-    int res;
-
-    res = 0;
-	while (s[res])
-	{
-		if (s[res] == '\n')
-			return (res);
-		res++;
-	}
-	return (0);
-}
-
-void	*ft_memset(void *s, int c, size_t n)
-{
-	unsigned int	i;
-	unsigned char	*str;
-
-	i = 0;
-	str = (unsigned char*)s;
-	while (i != n)
-	{
-		str[i] = c;
-		i++;
-	}
-	return (s);
-}
-
-void	ft_strclr(char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s && *(s + i))
-	{
-		*(s + i) = '\0';
-		i++;
-	}
-}
-
-char	*ft_strnew(size_t size)
-{
-	char	*str;
-
-	if (!(str = (char *)malloc(sizeof(char) * size + 1)))
-		return (NULL);
-	str[size] = '\0';
-	while (size--)
-		str[size] = '\0';
-	return (str);
-}
-
-void	*ft_memcpy(void *dest, const char *src, unsigned int n)
-{
-	unsigned int	i;
-	unsigned char	*str;
-
-	if (!dest && !src)
-		return (dest);
-	i = 0;
-	str = (unsigned char*)dest;
-	while (i != n)
-	{
-		str[i] = src[i];
-		i++;
-	}
-	return (dest);
 }
 
 char	*ft_strdup(const char *s)
