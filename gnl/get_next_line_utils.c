@@ -6,7 +6,7 @@
 /*   By: letuffle <letuffle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/12 16:29:47 by letuffle          #+#    #+#             */
-/*   Updated: 2020/07/16 21:56:10 by letuffle         ###   ########.fr       */
+/*   Updated: 2020/07/17 19:56:22 by letuffle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,18 +104,4 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strlcpy(res, s1, ft_strlen(s1) + 1);
 	ft_strlcat(res, s2, size + 1);
 	return (res);
-}
-
-char	*ft_strchr(const char *s, int c)
-{
-	char *str;
-
-	str = (char*)s;
-	while (*str != c)
-	{
-		if (!*str)
-			return (NULL);
-		str++;
-	}
-	return (str);
 }

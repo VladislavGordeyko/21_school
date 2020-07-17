@@ -6,13 +6,13 @@
 /*   By: letuffle <letuffle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/06 20:29:22 by letuffle          #+#    #+#             */
-/*   Updated: 2020/07/16 21:17:56 by letuffle         ###   ########.fr       */
+/*   Updated: 2020/07/17 19:14:19 by letuffle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-// # include <fcntl.h>
+
 # include <stdlib.h>
 # include <unistd.h>
 

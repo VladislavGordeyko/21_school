@@ -6,11 +6,25 @@
 /*   By: letuffle <letuffle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/06 20:33:16 by letuffle          #+#    #+#             */
-/*   Updated: 2020/07/16 21:23:40 by letuffle         ###   ########.fr       */
+/*   Updated: 2020/07/17 19:58:10 by letuffle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+char	*ft_strchr(const char *s, int c)
+{
+	char *str;
+
+	str = (char*)s;
+	while (*str != c)
+	{
+		if (!*str)
+			return (NULL);
+		str++;
+	}
+	return (str);
+}
 
 void	clear_string(char **str)
 {
@@ -63,7 +77,6 @@ int		get_next_line(int fd, char **line)
 	char		*nl_pntr;
 	char		*temp;
 
-	res = -1;
 	if (fd < 0 || !line || BUFF_SIZE < 1 || (read(fd, buf, 0)) < 0)
 		return (-1);
 	nl_pntr = check_remainder(&rem, line);
