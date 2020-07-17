@@ -6,7 +6,7 @@
 /*   By: letuffle <letuffle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/06 20:33:16 by letuffle          #+#    #+#             */
-/*   Updated: 2020/07/17 19:58:10 by letuffle         ###   ########.fr       */
+/*   Updated: 2020/07/17 21:48:07 by letuffle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,15 +72,15 @@ char	*check_remainder(char **rem, char **line)
 int		get_next_line(int fd, char **line)
 {
 	static char	*rem;
-	char		buf[BUFF_SIZE + 1];
+	char		buf[BUFFER_SIZE + 1];
 	ssize_t		res;
 	char		*nl_pntr;
 	char		*temp;
 
-	if (fd < 0 || !line || BUFF_SIZE < 1 || (read(fd, buf, 0)) < 0)
+	if (fd < 0 || !line || BUFFER_SIZE < 1 || (read(fd, buf, 0)) < 0)
 		return (-1);
 	nl_pntr = check_remainder(&rem, line);
-	while (!nl_pntr && (res = read(fd, buf, BUFF_SIZE)) > 0)
+	while (!nl_pntr && (res = read(fd, buf, BUFFER_SIZE)) > 0)
 	{
 		buf[res] = '\0';
 		if ((nl_pntr = ft_strchr(buf, '\n')))

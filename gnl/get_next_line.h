@@ -6,7 +6,7 @@
 /*   By: letuffle <letuffle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/06 20:29:22 by letuffle          #+#    #+#             */
-/*   Updated: 2020/07/17 19:14:19 by letuffle         ###   ########.fr       */
+/*   Updated: 2020/07/17 21:47:55 by letuffle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# ifndef BUFF_SIZE
-#  define BUFF_SIZE 32
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 32
 # endif
 
 int			get_next_line(int fd, char **line);
