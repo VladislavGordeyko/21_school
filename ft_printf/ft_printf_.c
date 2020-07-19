@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_printf_.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: letuffle <letuffle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/06 20:29:22 by letuffle          #+#    #+#             */
-/*   Updated: 2020/07/19 17:19:50 by letuffle         ###   ########.fr       */
+/*   Created: 2020/07/19 17:49:32 by letuffle          #+#    #+#             */
+/*   Updated: 2020/07/19 18:10:28 by letuffle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "name.h"
+#include <stdio.h> 
 
-# include <stdlib.h>
-# include <unistd.h>
+int		ft_printf(const char* format,...) 
+{ 
+	return (0);
+} 
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 32
-# endif
-
-int			get_next_line(int fd, char **line);
-char		*ft_strdup(const char *s);
-char		*ft_strjoin(char const *s1, char const *s2);
-char		*ft_strchr(const char *s, int c);
-size_t		ft_strlen(const char *str);
-
-#endif

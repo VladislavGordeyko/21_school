@@ -6,7 +6,7 @@
 /*   By: letuffle <letuffle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/06 20:50:07 by letuffle          #+#    #+#             */
-/*   Updated: 2020/07/17 19:58:47 by letuffle         ###   ########.fr       */
+/*   Updated: 2020/07/19 17:26:59 by letuffle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,14 +73,15 @@ int main()
 
     //printf("%d\n", get_next_line(0, &line));
 
-    i = 0;
-    while (get_next_line(fd, &line))
-    {
-        printf("%s\n", line);
-        free(line);
-        i++;
-    }
+    i = get_next_line(-50, &line);
+    // while (get_next_line(fd, &line))
+    // {
+        // printf("%s\n", line);
+        // free(line);
+        // i++;
+    // }
+    printf("%d\n", i);
     // printf("i = %d %s\n", i, line);
-    free(line);
+    // free(line);
     return (0);
 }

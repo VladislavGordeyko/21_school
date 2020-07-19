@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: letuffle <letuffle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/06 20:29:22 by letuffle          #+#    #+#             */
-/*   Updated: 2020/07/19 17:19:50 by letuffle         ###   ########.fr       */
+/*   Created: 2020/07/19 17:33:04 by letuffle          #+#    #+#             */
+/*   Updated: 2020/07/19 19:17:44 by letuffle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "name.h"
+#include <stdio.h>
 
-# include <stdlib.h>
-# include <unistd.h>
+int	main()
+{
+	int res = 0;
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 32
-# endif
+	int temp =123;
 
-int			get_next_line(int fd, char **line);
-char		*ft_strdup(const char *s);
-char		*ft_strjoin(char const *s1, char const *s2);
-char		*ft_strchr(const char *s, int c);
-size_t		ft_strlen(const char *str);
-
-#endif
+	// res = printf();
+	// ft_printf("%d\n", res, keke);
+	printf("%d\n %i", res);
+	return (0);
+}
