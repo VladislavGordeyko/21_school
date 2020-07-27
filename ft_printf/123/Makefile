@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: chemelin <chemelin@student.21-school.ru>   +#+  +:+       +#+         #
+#    By: letuffle <letuffle@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/05/18 10:47:07 by chemelin          #+#    #+#              #
-#    Updated: 2020/05/22 20:37:12 by chemelin         ###   ########.fr        #
+#    Created: 2020/07/27 23:45:54 by letuffle          #+#    #+#              #
+#    Updated: 2020/07/27 23:45:54 by letuffle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

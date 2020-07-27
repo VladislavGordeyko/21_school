@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chemelin <chemelin@student.21-school.ru>   +#+  +:+       +#+        */
+/*   By: letuffle <letuffle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/17 16:12:18 by chemelin          #+#    #+#             */
-/*   Updated: 2020/05/20 18:42:43 by chemelin         ###   ########.fr       */
+/*   Created: 2020/07/27 23:44:57 by letuffle          #+#    #+#             */
+/*   Updated: 2020/07/27 23:44:59 by letuffle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
