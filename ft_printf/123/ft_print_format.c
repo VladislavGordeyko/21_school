@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_format.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chemelin <chemelin@student.21-school.ru>   +#+  +:+       +#+        */
+/*   By: letuffle <letuffle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/20 18:06:56 by chemelin          #+#    #+#             */
-/*   Updated: 2020/05/22 20:34:49 by chemelin         ###   ########.fr       */
+/*   Updated: 2020/07/27 23:30:20 by letuffle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,6 @@ int			print_digitformat(t_formats *formats, char *str)
 
 	if (str[0] == '-')
 		ft_putnchar('-', 1);
-	else if (in_set('+', formats->flag) && in_set(formats->type[0], "id"))
-		ft_putnchar('+', 1);
 	else if (str[0] == '0' && (str[1] == 'x' || str[1] == 'X'))
 		ft_putnstr(str, 2);
 	if (ft_strlen(str) < (size_t)ft_atoi(formats->width))

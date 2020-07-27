@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chemelin <chemelin@student.21-school.ru>   +#+  +:+       +#+        */
+/*   By: letuffle <letuffle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/20 18:26:48 by chemelin          #+#    #+#             */
-/*   Updated: 2020/05/20 18:33:32 by chemelin         ###   ########.fr       */
+/*   Updated: 2020/07/27 22:44:36 by letuffle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
 
-void			*ft_memccpy_mod(void *dest, void *src, int c, size_t n)
+void			*ft_memccpy_m(void *dest, void *src, int c, size_t n)
 {
 	size_t		i;
 

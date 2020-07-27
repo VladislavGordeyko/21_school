@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_alignement.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chemelin <chemelin@student.21-school.ru>   +#+  +:+       +#+        */
+/*   By: letuffle <letuffle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/20 18:20:17 by chemelin          #+#    #+#             */
-/*   Updated: 2020/05/22 20:31:52 by chemelin         ###   ########.fr       */
+/*   Updated: 2020/07/27 23:28:58 by letuffle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,6 @@ size_t			set_length(t_formats *formats)
 	if (isnumbertype(formats->type[0]) && ft_atoi(formats->accuracy + 1) > 0)
 		return (ft_atoi(formats->accuracy + 1));
 	return (0);
-}
-
-static void		set_octotorp(char **param, t_formats *formats)
-{
-	char		*new_param;
-
-	if (formats->flag[0] == '#' && formats->set_octotorp == 1 &&
-		(formats->type[0] == 'x' || formats->type[0] == 'X'))
-	{
-		if (!(new_param = malloc(ft_strlen(*param) + 3)))
-			return ;
-		new_param[0] = '0';
-		if (formats->type[0] == 'x' || formats->type[0] == 'X')
-			new_param[1] = formats->type[0];
-		ft_strlcpy(new_param + 2, *param, ft_strlen(*param) + 1);
-		free(*param);
-		*param = new_param;
-	}
 }
 
 char			*set_width(char *param, t_formats *formats)
@@ -62,7 +44,6 @@ char			*set_width(char *param, t_formats *formats)
 		free(param);
 		param = new_param;
 	}
-	set_octotorp(&param, formats);
 	free(sign);
 	return (param);
 }

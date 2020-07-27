@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chemelin <chemelin@student.21-school.ru>   +#+  +:+       +#+        */
+/*   By: letuffle <letuffle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 09:55:28 by chemelin          #+#    #+#             */
-/*   Updated: 2020/05/22 17:55:53 by chemelin         ###   ########.fr       */
+/*   Updated: 2020/07/27 22:44:38 by letuffle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,38 +37,37 @@ char			*set_formats(va_list args, t_formats **formats, char *str)
 	str = flag(str, *formats);
 	str = width(str, *formats);
 	str = accuracy(str, *formats);
-	str = size(str, *formats);
 	str = type(str, *formats);
 	set_stars(args, formats);
 	return (str);
 }
 
-static int		do_printf(va_list args, char *str)
+static int		main_func(va_list args, char *str)
 {
-	char		*before_proc;
+	char		*bef_perc;
 	char		*param;
 	t_formats	*formats;
 	int			count;
 
-	before_proc = malloc(ft_strlen(str) + 1);
+	bef_perc = malloc(ft_strlen(str) + 1);
 	formats = NULL;
 	count = 0;
 	while (1)
 	{
-		str = ft_memccpy_mod(before_proc, str, '%', ft_strlen(str) + 1);
-		count += ft_putnstr(before_proc, ft_strlen(before_proc));
+		str = ft_memccpy_m(bef_perc, str, '%', ft_strlen(str) + 1);
+		count += ft_putnstr(bef_perc, ft_strlen(bef_perc));
 		if (!str)
 			break ;
 		str = set_formats(args, &formats, str);
 		if (!(*formats->type))
-			return (count + forbidden_formats(formats, str, before_proc));
+			return (count + forbidden_formats(formats, str, bef_perc));
 		param = get_parameter(args, formats);
 		update_parameter(&param, formats);
 		count += alignement(formats, param);
 		free(param);
 		clear(&formats);
 	}
-	free(before_proc);
+	free(bef_perc);
 	return (count);
 }
 
@@ -78,7 +77,7 @@ int				ft_printf(const char *str, ...)
 	va_list		args;
 
 	va_start(args, str);
-	count = do_printf(args, (char*)str);
+	count = main_func(args, (char*)str);
 	va_end(args);
 	return (count);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_formats.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chemelin <chemelin@student.21-school.ru>   +#+  +:+       +#+        */
+/*   By: letuffle <letuffle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/20 18:16:29 by chemelin          #+#    #+#             */
-/*   Updated: 2020/05/22 20:35:37 by chemelin         ###   ########.fr       */
+/*   Updated: 2020/07/27 22:19:03 by letuffle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void				clear(t_formats **formats)
 		free((*formats)->flag);
 		free((*formats)->width);
 		free((*formats)->accuracy);
-		free((*formats)->size);
 		free((*formats)->type);
 		free(*formats);
 		*formats = NULL;
@@ -34,7 +33,6 @@ void				print_initial_formats(t_formats *formats)
 		ft_putnstr(formats->flag, ft_strlen(formats->flag));
 		ft_putnstr(formats->width, ft_strlen(formats->width));
 		ft_putnstr(formats->accuracy, ft_strlen(formats->accuracy));
-		ft_putnstr(formats->size, ft_strlen(formats->size));
 		ft_putnstr(formats->type, ft_strlen(formats->type));
 	}
 	else

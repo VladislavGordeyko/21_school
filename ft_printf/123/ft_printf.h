@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chemelin <chemelin@student.21-school.ru>   +#+  +:+       +#+        */
+/*   By: letuffle <letuffle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 09:55:25 by chemelin          #+#    #+#             */
-/*   Updated: 2020/05/21 09:53:59 by chemelin         ###   ########.fr       */
+/*   Updated: 2020/07/27 23:31:14 by letuffle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ typedef struct		s_formats
 	char			*flag;
 	char			*width;
 	char			*accuracy;
-	char			*size;
 	char			*type;
-	int				set_octotorp;
 }					t_formats;
 
 char				*ft_itoa_base(long long n, int base);
@@ -39,22 +37,20 @@ int					print_p_format(t_formats *formats, char *str);
 char				*flag(char *str, t_formats *formats);
 char				*width(char *str, t_formats *formats);
 char				*accuracy(char *str, t_formats *formats);
-char				*size(char *str, t_formats *formats);
 char				*type(char *str, t_formats *formats);
 char				*get_parameter(va_list args, t_formats *formats);
 void				update_parameter(char **param, t_formats *formats);
-void				print_formats(t_formats *formats);
 void				print_initial_formats(t_formats *formats);
 char				*set_formats(va_list args, t_formats **formats, char *str);
 void				clear(t_formats **formats);
-void				*ft_memccpy_mod(void *dest, void *src, int c, size_t n);
+void				*ft_memccpy_m(void *dest, void *src, int c, size_t n);
 char				*set_nullstr(va_list args, t_formats *formats);
 void				ft_putnchar(char c, size_t n);
 int					ft_putnstr(char *str, size_t n);
 char				*strfromchr(char c);
 int					in_set(char c, char *set);
 char				*ft_cpytillforbidden(char *str, char *set);
-void				*ft_memccpy_mod(void *dest, void *src, int c, size_t n);
+void				*ft_memccpy_m(void *dest, void *src, int c, size_t n);
 char				*set_nullstr(va_list args, t_formats *formats);
 char				*ft_full(char c, size_t size);
 int					ft_max(int a, int b);

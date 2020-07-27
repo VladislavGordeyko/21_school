@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flags.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chemelin <chemelin@student.21-school.ru>   +#+  +:+       +#+        */
+/*   By: letuffle <letuffle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/20 18:21:40 by chemelin          #+#    #+#             */
-/*   Updated: 2020/05/22 20:32:43 by chemelin         ###   ########.fr       */
+/*   Updated: 2020/07/27 23:30:49 by letuffle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,9 @@
 
 char			*flag(char *str, t_formats *formats)
 {
-	if (str[0] == '-' || str[0] == '0' || str[0] == '+' || str[0] == '#' ||
-		str[0] == ' ')
+	if (str[0] == '-' || str[0] == '0')
 	{
-		formats->flag = ft_cpytillforbidden(str, "-0+# ");
+		formats->flag = ft_cpytillforbidden(str, "-0");
 		return (str + ft_strlen(formats->flag));
 	}
 	formats->flag = strfromchr('\0');
@@ -62,32 +61,6 @@ char			*accuracy(char *str, t_formats *formats)
 		return (str + 1);
 	}
 	formats->accuracy = strfromchr('\0');
-	return (str);
-}
-
-char			*size(char *str, t_formats *formats)
-{
-	if (str[0] == 'l')
-	{
-		if (str[1] == 'l')
-		{
-			formats->size = ft_strdup("ll");
-			return (str + 2);
-		}
-		formats->size = ft_strdup("l");
-		return (str + 1);
-	}
-	else if (str[0] == 'h')
-	{
-		if (str[1] == 'h')
-		{
-			formats->size = ft_strdup("hh");
-			return (str + 2);
-		}
-		formats->size = ft_strdup("h");
-		return (str + 1);
-	}
-	formats->size = strfromchr('\0');
 	return (str);
 }
 
